@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ColorChangeContainerMenu(),
+    );
+  }
+}
+
+class ColorChangeContainerMenu extends StatefulWidget {
+  @override
+  _ColorChangeContainerMenuState createState() =>
+      _ColorChangeContainerMenuState();
+}
+
+class _ColorChangeContainerMenuState extends State<ColorChangeContainerMenu> {
+  // Cor inicial dos containers
+  Color _containerColor = Colors.grey;
+
+  // Função para alterar a cor de todos os containers
+  void _changeAllContainersColor(Color color) {
+    setState(() {
+      _containerColor = color;
+    });
+    Navigator.of(context).pop(); // Fecha o Drawer automaticamente
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Menu Hambúrguer - Mudar Cores dos Blocos'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Selecione uma cor',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.circle, color: Colors.red),
+              title: Text('Vermelho'),
+              onTap: () => _changeAllContainersColor(
+                  Colors.red), // Muda todos para vermelho
+            ),
+            ListTile(
+              leading: Icon(Icons.circle, color: Colors.green),
+              title: Text('Verde'),
+              onTap: () => _changeAllContainersColor(
+                  Colors.green), // Muda todos para verde
+            ),
+            ListTile(
+              leading: Icon(Icons.circle, color: Colors.blue),
+              title: Text('Azul'),
+              onTap: () => _changeAllContainersColor(
+                  Colors.blue), // Muda todos para azul
+            ),
+            ListTile(
+              leading: Icon(Icons.circle, color: Colors.yellow),
+              title: Text('Amarelo'),
+              onTap: () => _changeAllContainersColor(
+                  Colors.yellow), // Muda todos para amarelo
+            ),
+            ListTile(
+              leading: Icon(Icons.circle, color: Colors.orange),
+              title: Text('Laranja'),
+              onTap: () => _changeAllContainersColor(
+                  Colors.orange), // Muda todos para laranja
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        child: Wrap(
+          spacing: 20.0, // Espaçamento entre os containers
+          runSpacing: 20.0, // Espaçamento vertical entre as linhas
+          children: [
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 1')),
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 2')),
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 3')),
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 4')),
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 5')),
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: _containerColor, // Cor de todos os containers
+              child: Center(child: Text('Container 6')),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
