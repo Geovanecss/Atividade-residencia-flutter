@@ -20,15 +20,13 @@ class ColorChangeContainerMenu extends StatefulWidget {
 }
 
 class _ColorChangeContainerMenuState extends State<ColorChangeContainerMenu> {
-  // Cor inicial dos containers
   Color _containerColor = Colors.grey;
 
-  // Função para alterar a cor de todos os containers
   void _changeAllContainersColor(Color color) {
     setState(() {
       _containerColor = color;
     });
-    Navigator.of(context).pop(); // Fecha o Drawer automaticamente
+    Navigator.of(context).pop();
   }
 
   @override
@@ -57,74 +55,74 @@ class _ColorChangeContainerMenuState extends State<ColorChangeContainerMenu> {
               leading: Icon(Icons.circle, color: Colors.red),
               title: Text('Vermelho'),
               onTap: () => _changeAllContainersColor(
-                  Colors.red), // Muda todos para vermelho
+                  Colors.red), 
             ),
             ListTile(
               leading: Icon(Icons.circle, color: Colors.green),
               title: Text('Verde'),
               onTap: () => _changeAllContainersColor(
-                  Colors.green), // Muda todos para verde
+                  Colors.green), 
             ),
             ListTile(
               leading: Icon(Icons.circle, color: Colors.blue),
               title: Text('Azul'),
               onTap: () => _changeAllContainersColor(
-                  Colors.blue), // Muda todos para azul
+                  Colors.blue), 
             ),
             ListTile(
               leading: Icon(Icons.circle, color: Colors.yellow),
               title: Text('Amarelo'),
               onTap: () => _changeAllContainersColor(
-                  Colors.yellow), // Muda todos para amarelo
+                  Colors.yellow),
             ),
             ListTile(
               leading: Icon(Icons.circle, color: Colors.orange),
               title: Text('Laranja'),
               onTap: () => _changeAllContainersColor(
-                  Colors.orange), // Muda todos para laranja
+                  Colors.orange), 
             ),
           ],
         ),
       ),
       body: Center(
         child: Wrap(
-          spacing: 20.0, // Espaçamento entre os containers
-          runSpacing: 20.0, // Espaçamento vertical entre as linhas
+          spacing: 20.0, 
+          runSpacing: 20.0, 
           children: [
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor, 
               child: Center(child: Text('Container 1')),
             ),
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor,
               child: Center(child: Text('Container 2')),
             ),
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor, 
               child: Center(child: Text('Container 3')),
             ),
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor, 
               child: Center(child: Text('Container 4')),
             ),
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor, 
               child: Center(child: Text('Container 5')),
             ),
             Container(
               height: 100,
               width: 100,
-              color: _containerColor, // Cor de todos os containers
+              color: _containerColor, 
               child: Center(child: Text('Container 6')),
             ),
           ],
